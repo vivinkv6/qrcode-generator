@@ -64,7 +64,7 @@ function App() {
       
 
       {visible &&
-    <QRCodeCanvas value={url} />
+    <QRCodeCanvas value={url} style={{height:'180px',width:'180px'}} />
       }
       </div>
       </div>
