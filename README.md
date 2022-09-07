@@ -1,10 +1,12 @@
-# Getting Started with Create React App
+# QRCode Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It is an application used to generate different types of QR Codes.Depending upon your purpose,you can use our generator to create QR Codes to open a website,social media profiles such as facebook,instagram,Youtube videos and much more.
 
-## Available Scripts
+## Technologies and their Versions
 
-In the project directory, you can run:
+ React JS: "^18.2.0"<br>
+ ReactBootstrap: "^2.5.0"<br>
+ qrcode.react: "^3.1.0"
 
 ### `npm start`
 
