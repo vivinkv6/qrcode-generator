@@ -1,9 +1,10 @@
-import logo from './logo.svg';
+
 import './App.css';
 import {QRCodeCanvas} from 'qrcode.react';
 import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
+import Alert from 'react-bootstrap/Alert';
 
 function App() {
   const [url,setUrl]=useState('');
@@ -26,18 +27,41 @@ function App() {
   }
   return (
     <div className="App">
-      <h2 style={{marginBottom:'20px'}}>QRCode Generator</h2>
+
+<Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="#home">
+            <div style={{display:'flex',flexDirection:'row'}}>
+            <img
+              alt=""
+              src="https://www.qr-code-generator.com/wp-content/themes/qr/new_structure/markets/core_market_full/generator/dist/generator/assets/images/websiteQRCode_noFrame.png"
+              width="30"
+              height="30"
+              className="d-inline-block align-top me-3"
+            />{' '}
+           <span className='fw-bolder'>QRCode Generator</span>
+           </div>
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
+
+     
       <div style={{backgroundColor:'#f0f0f0',display:'inline-block',padding:'20px',marginTop:'30px'}}>
-      <input type="text" value={url} onChange={(e)=>setUrl(e.target.value)} required />
+      <input type="text" style={{borderRadius:'5px'}} placeholder="Enter URL" value={url} onChange={(e)=>setUrl(e.target.value)} required />
       <br />
+    
+      <button className='btn btn-secondary' onClick={submition} style={{marginTop:'10px'}}>Generate QRCode</button>
       {error &&
-      <p style={{color:'red'}}>*Invalid Input</p>
+      <Alert className='mt-3'  variant='danger'>
+      Invalid Input
+    </Alert>
 }
-      <button onClick={submition} style={{marginTop:'10px'}}>Generate QRCode</button>
       </div>
+    
       <br />
        <div style={{height:'500px',width:'100%',display:'flex',justifyContent:'center',alignItems:'center'}}>
         <div>
+      
 
       {visible &&
     <QRCodeCanvas value={url} />
